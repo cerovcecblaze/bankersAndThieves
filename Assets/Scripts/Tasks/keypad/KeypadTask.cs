@@ -20,22 +20,23 @@ public class KeypadTask : MonoBehaviour
     }
 
     public void NumberClicked(int number) {
-        if (reset) {
-            return;
-        }
-
-        input.text += number;
-
-        if (input.text == employeeNum.text)
+        if (!reset)
         {
-            input.text = "SUCCESS";
-            StartCoroutine(ResetPad());
-            
 
-        }
-        else if (input.text.Length >= length) {
-            input.text = "FAILED";
-            StartCoroutine(ResetPad());
+            input.text += number;
+
+            if (input.text == employeeNum.text)
+            {
+                input.text = "SUCCESS";
+                StartCoroutine(ResetPad());
+
+
+            }
+            else if (input.text.Length >= length)
+            {
+                input.text = "FAILED";
+                StartCoroutine(ResetPad());
+            }
         }
 
     }

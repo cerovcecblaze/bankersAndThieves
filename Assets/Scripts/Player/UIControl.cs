@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class UIControl : MonoBehaviour
 {
-    public static UIControl Instance;
+    public static UIControl UI;
 
     public Button useButton;
-    public bool HasInteractible;
-    public Interactible CurrentInteractible;
+    public bool hasI;
+    public Interactible currentI;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,16 +19,16 @@ public class UIControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        useButton.interactable = HasInteractible;
+        useButton.interactable = hasI;
     }
 
     public void OnUseButtonPressed() {
-        if (CurrentInteractible == null) {
+        if (currentI == null) {
             return;
         }
-        CurrentInteractible.Use(true);
+        currentI.Use(true);
     }
     public void Awake() {
-        Instance = this;
+        UI = this;
     }
 }

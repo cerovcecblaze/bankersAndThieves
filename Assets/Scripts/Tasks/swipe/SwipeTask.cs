@@ -55,7 +55,7 @@ public class SwipeTask : MonoBehaviour
         }
         else {
             red.SetActive(true);
-            screenText.text = "Failed";
+            screenText.text = "Try Again";
         }
         yield return new WaitForSeconds(1f);
 
@@ -66,6 +66,5 @@ public class SwipeTask : MonoBehaviour
         green.SetActive(false);
         red.SetActive(false);
         screenText.text = "Swipe";
-
     }
 }

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class SwipeCard : MonoBehaviour, IDragHandler
+public class Coin : MonoBehaviour, IDragHandler
 {
-
     private Canvas canvas;
 
     private void Awake()
@@ -17,7 +16,6 @@ public class SwipeCard : MonoBehaviour, IDragHandler
 
     public void OnDrag(PointerEventData ed)
     {
-        Debug.Log("detected");
         Vector2 p;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             canvas.transform as RectTransform,
@@ -30,12 +28,12 @@ public class SwipeCard : MonoBehaviour, IDragHandler
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

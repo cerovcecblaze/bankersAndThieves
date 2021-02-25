@@ -11,8 +11,13 @@ public class TaskInteraction : MonoBehaviourPun
 
     private void Awake()
     {
-        if (!photonView.IsMine) { return; }
-        StartCoroutine(SearchForInteraction());
+        if (photonView.IsMine)
+        {
+            StartCoroutine(SearchForInteraction());
+        }
+        else {
+            return;
+        }
     }
 
     // Start is called before the first frame update
@@ -30,31 +35,30 @@ public class TaskInteraction : MonoBehaviourPun
     {
         while (true)
         {
+            UIControl.UI.hasI = false;
             Interactible newT = null;
             Interactible[] interactionList = FindObjectsOfType<Interactible>();
-
-            UIControl.Instance.HasInteractible = false;
-
 
             foreach (Interactible interactible in interactionList)
             {
                 float distance = Vector3.Distance(transform.position, interactible.transform.position);
-                if (distance > range) { continue; }
-
-                newT = interactible;
-                UIControl.Instance.HasInteractible = true;
-                break;
+                if (distance <= range)
+                {
+                    newT = interactible;
+                    UIControl.UI.hasI = true;
+                    break;
+                }
             }
 
-            if (UIControl.Instance.CurrentInteractible != newT &&
-                    UIControl.Instance.CurrentInteractible != null)
+            if (UIControl.UI.currentI != newT &&
+                    UIControl.UI.currentI != null)
             {
-                UIControl.Instance.CurrentInteractible.Use(false);
+                UIControl.UI.currentI.Use(false);
 
             }
 
             target = newT;
-            UIControl.Instance.CurrentInteractible = target;
+            UIControl.UI.currentI = target;
 
             yield return new WaitForSeconds(0.25f);
         }
