@@ -18,5 +18,6 @@ Functionality Included:
 - Movement and Collisions with environment
 - Player walk animation
 - Interaction with tasks based on proximity
+- Piggy Bank Task, put all coins in piggy bank using drag and drop
 - Swipe Card Task to activate bank credit card (Touch and drag through the machine at the right speed and all the way through)
 - Number Pad Task to punch in your employee number
