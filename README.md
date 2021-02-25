@@ -4,6 +4,7 @@ Packages Used:
 Photon Pun 2 for multiplayer
 Joystick pack for joystick
 
+Build: https://banker-and-thieves-build.vercel.app/
 To Run Game, Select Lobby Scene and run or open the index.html file in a supported web browser (located in web folder)
 You can also run the main scene (the actual game) by itself if you reverse the commented out and uncommented sections in the network.cs file.
 
