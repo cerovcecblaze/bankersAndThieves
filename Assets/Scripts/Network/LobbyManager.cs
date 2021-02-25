@@ -15,6 +15,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject lobbyListParent;
     [SerializeField] private GameObject createRoom;
     [SerializeField] private GameObject room;
+    [SerializeField] private GameObject loading;
     [SerializeField] private Button LeaveButton;
     [SerializeField] private Button StartButton;
 
@@ -26,6 +27,9 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     {
         Connect();
         room.SetActive(false);
+        createRoom.SetActive(false);
+        lobbyListParent.SetActive(false);
+        loading.SetActive(true);
         StartButton.interactable = false;
         LeaveButton.interactable = false;
     }
@@ -56,6 +60,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         Debug.Log("Joined Lobby");
+
+        createRoom.SetActive(true);
+        lobbyListParent.SetActive(true);
+        loading.SetActive(false);
     }
 
     public override void OnJoinedRoom()
