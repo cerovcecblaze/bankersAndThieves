@@ -31,6 +31,7 @@ public class TaskInteraction : MonoBehaviourPun
     {
       
     }
+
     public IEnumerator SearchForInteraction()
     {
         while (true)
