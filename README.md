@@ -1,8 +1,8 @@
 # bankersAndThieves
 
 Packages Used:
-Photon Pun 2 for multiplayer
-Joystick pack for joystick
+Photon Pun 2 for multiplayer, 
+Joystick pack for joystick, all assets are drawn by me using google drawings
 
 Build: https://banker-and-thieves-build.vercel.app/
 To Run Game, Select Lobby Scene and run or open the index.html file in a supported web browser (located in web folder)
